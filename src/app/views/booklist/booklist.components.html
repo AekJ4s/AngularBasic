@@ -1,0 +1,38 @@
+<table>
+    <thead>
+        <tr>
+            <th>
+                Book ID
+            </th>
+            <th>
+                Book Title
+            </th>
+            <th>
+                Book price
+            </th>
+            <th>
+                Edit
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let book of AllBook">
+        <td>
+            {{book.id}}
+        </td>
+        <td>
+            {{book.title}}
+        </td>
+        <td>
+            {{book.price}}
+        </td>
+        <td>
+            <Link to="/page1">ไปยังหน้า 1</Link>
+        </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+

@@ -1,0 +1,21 @@
+<form (submit)="onSubmit()">
+    <div>
+        <label> EDIT THE DATA</label>
+
+        <div>
+            <label> Edit This ID : </label>
+            <input type="text" [(ngModel)]="book.id" name="id" >
+
+        </div>
+        <div>
+            <label> Book Title : </label>
+            <input type="text" [(ngModel)]="book.title" name="title" >
+        </div>
+        <div>
+            <label> Book price : </label>
+            <input type="number" [(ngModel)]="book.price" name="price" >
+        </div>
+    </div>
+    <button type="submit">Edit</button>
+   
+</form>

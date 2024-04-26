@@ -1,0 +1,20 @@
+
+
+<h2>Upload Image here</h2>
+<input type="file" (change)="uploading($event)">
+
+<div>
+    <img [src]="show_url">
+</div>
+
+@if (image != null) {
+    <button class="btn btn-primary" (click)="sendToServer()">Send to Server</button>
+    <div>
+        <img [src]="image_url">
+    </div>
+    <a [href]="show_url" target="_blank" download>
+        Dowload {{image.name}} Now
+    </a>
+
+
+}
