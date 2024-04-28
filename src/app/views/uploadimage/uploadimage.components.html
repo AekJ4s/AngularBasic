@@ -1,20 +1,30 @@
-
-
-<h2>Upload Image here</h2>
-<input type="file" (change)="uploading($event)">
-
-<div>
-    <img [src]="show_url">
+<div class="container d-flex justify-content-center align-items-center">
+  <div class="bg-light" style="border-radius: 15px">
+    <div class="mt-3 text-primary">
+      <h2>Upload Image here</h2>
+    </div>
+    <div class="card-body">
+      <input
+        type="file"
+        class="btn btn-sm btn-outline-primary"
+        (change)="uploading($event)"
+      />
+    </div>
+  </div>
 </div>
 
 @if (image != null) {
-    <button class="btn btn-primary" (click)="sendToServer()">Send to Server</button>
-    <div>
-        <img [src]="image_url">
-    </div>
-    <a [href]="show_url" target="_blank" download>
-        Dowload {{image.name}} Now
+<div class="container d-flex justify-content-center align-items-center mt-5">
+  <div class="bg-black align-items-center m-5">
+    <a [href]="show_url" target="_blank" class="bg-light" download>
+      Dowload {{image.name}} Now
     </a>
-
-
+    <button class="btn btn-primary w-50 mt-2" (click)="sendToServer()">
+      Send to Server
+    </button>
+    <div>
+      <img [src]="image_url" />
+    </div>
+  </div>
+</div>
 }

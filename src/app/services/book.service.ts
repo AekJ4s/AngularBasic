@@ -1,32 +1,32 @@
-import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import Book from "../models/book.model";
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import Book from '../models/book.model';
 
 @Injectable({
-    providedIn: 'root',
+  providedIn: 'root',
 })
 export class BookService {
-    constructor(private http: HttpClient) {}
-    
-    readonly baseURL = 'http://localhost:3000/books';
+  constructor(private http: HttpClient) {}
 
-    getAll(){
-        return this.http.get<Book[]>(`${this.baseURL}`)
-    }
+  readonly baseURL = 'http://localhost:3000/books';
 
-    get(id:number|string){
-        return this.http.get<Book>(`${this.baseURL}/${id}`)
-    }
-    
-    post(book:Book){
-        return this.http.post<Book>(`${this.baseURL}`,book)
-    }
+  getAll() {
+    return this.http.get<Book[]>(`${this.baseURL}`);
+  }
 
-    put(book:Book){
-        return this.http.put<Book>(`${this.baseURL}`,book)
-    }
+  get(id: number | string) {
+    return this.http.get<Book>(`${this.baseURL}/${id}`);
+  }
 
-    delete(id:number|string){
-        return this.http.delete<Book>(`${this.baseURL}/${id}`)
-    }
+  post(book: Book) {
+    return this.http.post<Book>(`${this.baseURL}`, book);
+  }
+
+  put(book: Book) {
+    return this.http.put<Book>(`${this.baseURL}`, book);
+  }
+
+  delete(id: number | string) {
+    return this.http.delete<Book>(`${this.baseURL}/${id}`);
+  }
 }

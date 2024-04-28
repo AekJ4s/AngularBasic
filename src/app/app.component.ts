@@ -6,20 +6,31 @@ import { FormsModule } from '@angular/forms';
 import { BookListComponent } from './views/booklist/booklist.components';
 import { UploadImageComponent } from './views/uploadimage/uploadimage.components';
 import { BookUpdateComponent } from './views/bookupdate/bookupdate.components';
+import { BookDelete } from './views/bookdelete/bookdelete.components';
 @Component({
   selector: 'app-root',
   standalone: true,
-  
-  imports: [BookUpdateComponent,UploadImageComponent,RouterModule,BookListComponent,FormsModule,CommonModule,RouterOutlet , NewComponent],
+
+  imports: [
+    BookDelete,
+    BookUpdateComponent,
+    UploadImageComponent,
+    RouterModule,
+    BookListComponent,
+    FormsModule,
+    CommonModule,
+    RouterOutlet,
+    NewComponent,
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'first-my-angular';
-  arraySample = [1,3,99,6,8]
-  testInput = ""
+  arraySample = [1, 3, 99, 6, 8];
+  testInput = '';
 
-  onKey(event:any){
-    this.testInput = event.target?.value
+  onKey(event: any) {
+    this.testInput = event.target?.value;
   }
 }

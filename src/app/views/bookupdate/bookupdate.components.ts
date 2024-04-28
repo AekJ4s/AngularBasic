@@ -1,30 +1,38 @@
-import { Component } from "@angular/core";
-import { FormsModule } from "@angular/forms";
-import Book from "../../models/book.model";
-import { BookService } from "../../services/book.service";
-import { error } from "console";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { BookService } from '../../services/book.service';
+import Book from '../../models/book.model';
 
 @Component({
-    selector: 'bookupdate.component',
-    standalone: true,
-    templateUrl: './bookupdate.components.html',
-    styleUrl: './bookupdate.components.css',
-    imports: [FormsModule]
+  selector: 'bookupdate-component',
+  standalone: true,
+  templateUrl: './bookupdate.components.html',
+  styleUrls: ['./bookupdate.components.css'],
 })
+export class BookUpdateComponent implements OnInit {
+  book = new Book();
 
-export class BookUpdateComponent{
-    book = new Book();
-    constructor(private bookService: BookService){ }
+  constructor(
+    private route: ActivatedRoute,
+    private bookService: BookService
+  ) {}
 
-    onSubmit(){
-        console.log("This button to update is working")
-        this.bookService.put(this.book).subscribe(
-            (result) => {
-                window.location.reload();
-            },
-            (error) => {
-                console.error(error);
-            }
-        );
-    }
+  ngOnInit() {
+    this.route.params.subscribe((params) => {
+      this.book.id = params['id'];
+      this.book.title = params['title'];
+      this.book.price = params['price'];
+    });
+  }
+
+  onSubmit() {
+    this.bookService.put(this.book).subscribe(
+      (result) => {
+        window.location.reload();
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }
 }

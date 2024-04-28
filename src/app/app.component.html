@@ -1,27 +1,32 @@
-<newcomponent>
-</newcomponent>
+<!-- <newcomponent> </newcomponent>
 <p *ngIf="false; else elseBlock">don't show this</p>
 <ng-template #elseBlock><p>show This</p></ng-template>
 <ng-container *ngFor="let num of arraySample">
-<p>{{num}}</p>
-
+  <p>{{ num }}</p>
 </ng-container>
-<p>testInput = {{testInput}}</p>
+<p>testInput = {{ testInput }}</p>
 <p>----</p>
-<input (keyup)="onKey($event)">
+<input (keyup)="onKey($event)" />
 
-<p>testInput = {{testInput}}</p>
+<p>testInput = {{ testInput }}</p>
 <p>-----</p>
-<input [(ngModel)]="testInput"/>
+<input [(ngModel)]="testInput" /> -->
+<ul class="nav justify-content-center m-3">
+  <li class="nav-item">
+    <a class="nav-link" aria-current="page" routerLink="">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" aria-current="page" routerLink="createbook">Create</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" aria-current="page" routerLink="searchbook">Search</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" aria-current="page" routerLink="deletebook">Delete</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" aria-current="page" routerLink="uploadImage">Upload</a>
+  </li>
+</ul>
 
-<booklist-component></booklist-component>
-<button routerLink="" class="add-margin" Button>Home</button>
-<button routerLink="createbook" class="add-margin" Button>Add Book</button>
-<button routerLink="updatebook" class="add-margin" Button>Update Book</button>
-<button routerLink="searchbook" class="add-margin" Button>Search Book</button>
-
-
-<router-outlet/>
-
-<uploadImage-component></uploadImage-component>
-
+<router-outlet />

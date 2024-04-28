@@ -1,38 +1,22 @@
-<table>
-    <thead>
-        <tr>
-            <th>
-                Book ID
-            </th>
-            <th>
-                Book Title
-            </th>
-            <th>
-                Book price
-            </th>
-            <th>
-                Edit
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let book of AllBook">
-        <td>
-            {{book.id}}
-        </td>
-        <td>
-            {{book.title}}
-        </td>
-        <td>
-            {{book.price}}
-        </td>
-        <td>
-            <Link to="/page1">ไปยังหน้า 1</Link>
-        </td>
-        </tr>
-    </tbody>
-</table>
-
-
-
-
+<div class="row m-3 useMybg">
+  <div
+    class="col-sm-6 mb-3 mb-sm-0"
+    *ngFor="let book of AllBook; let i = index"
+  >
+    <div class="card mt-3">
+      <div class="card-body">
+        <h5 class="card-title">
+          เล่มที่ {{ book.id }} <br />ชื่อหนังสือ {{ book.title }} <br />
+          ราคา {{book.price}} บาท
+        </h5>
+        <p class="card-text"></p>
+        <a
+          class="nav-link"
+          aria-current="page"
+          [routerLink]="['updatebook', book.id, book.title, book.price]"
+          >แก้ไขหนังสือเล่มนี้</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

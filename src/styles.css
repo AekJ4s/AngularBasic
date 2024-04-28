@@ -1,2 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./bootstrap.min.css";
+
+div {
+  text-align: center;
+}
+
+body {
+  background-color: #f0f0f0; /* สีพื้นหลัง */
+  background-image: url("wallpaperflare.com_wallpaper.jpg"); /* รูปภาพพื้นหลัง */
+  background-repeat: no-repeat; /* ไม่ให้ซ้ำ */
+  background-size: cover; /* ปรับขนาดให้เต็มหน้าจอ */
+}
