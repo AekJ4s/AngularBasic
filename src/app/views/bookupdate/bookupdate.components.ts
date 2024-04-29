@@ -19,15 +19,20 @@ export class BookUpdateComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
-      this.book.id = params['id'];
+      this.book.id = +params['id'];
       this.book.title = params['title'];
-      this.book.price = params['price'];
+      this.book.price = +params['price'];
     });
   }
 
-  onSubmit() {
+  onSubmit(event:any) {
+    //event.stopPropagation();
+    // event.preventDefault(); ยกเลิกรีเฟรชหน้าหลังกดปุ่ม
+    // console.log(this.book) แสดงค่าของ book มาทางคอนโซล
+    
     this.bookService.put(this.book).subscribe(
       (result) => {
+        // console.log(this.book)
         window.location.reload();
       },
       (error) => {
