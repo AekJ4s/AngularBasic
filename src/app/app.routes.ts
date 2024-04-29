@@ -6,6 +6,7 @@ import { BookByIdComponent } from './views/bookbyid/bookbyid.components';
 import { BookDelete } from './views/bookdelete/bookdelete.components';
 import { UploadImageComponent } from './views/uploadimage/uploadimage.components';
 import { BookListComponent } from './views/booklist/booklist.components';
+import { appcrossComponent  } from './views/crosscomponent/cross.components';
 export const routes: Routes = [
   { path: 'test_path/:id', component: NewComponent },
   { path: 'createbook', component: BookCreateComponent },
@@ -14,4 +15,5 @@ export const routes: Routes = [
   { path: 'deletebook', component: BookDelete },
   { path: 'uploadImage', component: UploadImageComponent },
   { path: '', component: BookListComponent },
+  { path: 'crosstest', component: appcrossComponent},
 ];

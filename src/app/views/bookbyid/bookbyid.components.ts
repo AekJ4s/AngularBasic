@@ -6,7 +6,7 @@ import { error } from "console";
 import { CommonModule } from "@angular/common";
 
 @Component({
-    selector: 'bookbyid.component',
+    selector: 'bookbyid-component',
     standalone: true, 
     templateUrl: './bookbyid.components.html',
     styleUrl: './bookbyid.components.css',

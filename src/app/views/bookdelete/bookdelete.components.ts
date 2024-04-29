@@ -6,7 +6,7 @@ import { error } from 'console';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'bookdelete.component',
+  selector: 'bookdelete-component',
   standalone: true,
   templateUrl: './bookdelete.components.html',
   styleUrl: './bookdelete.components.css',

@@ -5,7 +5,7 @@ import { BookService } from "../../services/book.service";
 import { error } from "console";
 
 @Component({
-    selector: 'bookcreate.component',
+    selector: 'bookcreate-component',
     standalone: true,
     templateUrl: './bookcreate.components.html',
     styleUrl: './bookcreate.components.css',
